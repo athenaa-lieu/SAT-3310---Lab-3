@@ -14,33 +14,33 @@
 # Variables
 
 # Set the default directory where the files are located
-defaultdir = ~/home/sat3310/Documents/labs/SAT-3310---Lab-3/data
+defaultdir=~/Documents/labs/SAT-3310---Lab-3/data
 
 # Set the file names for the nouns and agent nouns
-nouns = 'nouns.txt'
-agentnouns = 'agentnouns.txt'
+nouns='nouns.txt'
+agentnouns='agentnouns.txt'
 
 # Arrays to store the words from the files
-nouns_array = ()
-agentnouns_array = ()
+nouns_array=()
+agentnouns_array=()
 
 # Main Program
 
 # List the files in the default directory
-echo "Files in $defaultdir:"
-ls $defaultdir
+echo "Listing files in $defaultdir:"
+ls "$defaultdir"
 # ls command lists the files in the specified directory, allowing us to verify that the files we need are present.
 # defaultdir is the variable that holds the path to the directory where our files are located.
 # By using ls $defaultdir, we can see all the files in that directory, which helps us confirm that nouns.txt and agentnouns.txt are there before we try to read them.
 
 # Put words into an array
 # Read the nouns from the nouns file and store them in the nouns_array
-readarray -t nouns_array < $defaultdir/$nouns
+readarray -t nouns_array < "$defaultdir/$nouns"
 # -t option removes the newline characters from the end of each line
 # This allows us to have clean words in the array without extra newlines
 
 # Read the agent nouns from the agentnouns file and store them in the agentnouns_array
-readarray -t agentnouns_array < $defaultdir/$agentnouns
+readarray -t agentnouns_array < "$defaultdir/$agentnouns"
 
 # Count words
 # Get the number of nouns by counting the elements in the nouns_array
